@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    #overlay {
+      position: fixed;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+      cursor: pointer;
+    }
+    #text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 50px;
+      color: white;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="overlay" onclick="off()">
+    <div id="text">Overlay Text</div>
+    <img id="myImage" style="width: 600px;" src="">
+  </div>
+
+  <div style="padding:20px">
+    <button onclick="on('http://wlu-cp202.appspot.com/img/BasquiatHalloween.jpg')">Basquiat</button>
+  </div>
+
+  <div style="padding:20px">
+    <button onclick="on('http://wlu-cp202.appspot.com/img/charles-5R5HgLyHMVQ-unsplash.jpg')">Charles</button>
+  </div>
+
+  <div style="padding:20px">
+    <button onclick="on('http://wlu-cp202.appspot.com/img/Claude_Monet,_Impression,_soleil_levant.jpg')">Claude Monet</button>
+  </div>
+
+  <script>
+    function on(imgURL) {
+      document.getElementById("myImage").src = imgURL;
+      document.getElementById("overlay").style.display = "block";
+    }
+    function off() {
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
+
+</body>
+
+</html>
